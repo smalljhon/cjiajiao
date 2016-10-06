@@ -1,0 +1,43 @@
+{dede:config.pagesize value="20"/}
+{dede:include filename="header.htm"/}
+<div class="container">
+	<div class="row post-list">
+		<div class="col-sm-12 col">
+				{dede:datalist} 
+				<div class="post-667 post mb-20">
+					<a class="pull-left img-div" href="javascript:void">
+						<!--  <img src="{dede:field.litpic/}" style="margin-top: 0px;">-->
+						<img src="http://mao10.qiniudn.com/201605181602324467.jpg" style="margin-top: 0px;">
+					</a>
+					<div class="post-right">
+						<h2 class="title">
+							<a class="wto" href="">
+								{dede:field.uname/}-{dede:field.school/}	
+							</a>
+						</h2>
+						<div class="author mb-10">
+							<a>{dede:field.sex/}</a>-<span>{dede:field.city/}</span>
+							<div class="clearfix"></div>
+						</div>
+						<div class="entry mb-10">
+						{dede:field.description function="emptyConvert(@me)"/}
+						</div>
+						<ul class="list-inline mb-0">
+							<li><i class="glyphicon glyphicon-tag"></i> &nbsp;&nbsp;<a>{dede:field.school/}-{dede:field.nianji/} {dede:field.zhuanye/}</a></li><br/><br/>
+							<li><i class="glyphicon glyphicon-list-alt"></i> &nbsp;&nbsp;获奖经历：
+							{dede:field.prize_good function="emptyConvert(@me)"/}
+							</li>
+							<br/><br/>
+							<!-- <li><i class="glyphicon glyphicon-paperclip"></i>&nbsp;&nbsp;<a>工作经验：{dede:field.work_experience/}</a></li> -->
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				{/dede:datalist}
+		</div>
+	</div>
+</div>
+
+{dede:include filename="footer.html"/}
+</body>
+</html>

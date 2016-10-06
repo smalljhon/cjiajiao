@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>学员信息管理</title>
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link href="../templets/default/css/base.css" rel="stylesheet" type="text/css">
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script language="javascript" src="js/member.js"></script>
+<style type="text/css">
+.rb{ border-right:1px solid #666666 }
+.tb{ border-top:1px solid #666666 }
+</style>
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8' style="font-family='微软雅黑'">
+<!-- 头部nav -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom:0px">
+  <div class="container-fluid" >
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/info_index.php">College家教</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/info_index.php">首页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="/dede/viewArticle.php?aid=1&dopost=view">接单须知</a></li>
+        <li><a href="/dede/viewArticle.php?aid=2&dopost=view">关于我们</a></li>        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/member/index.php">用户中心</a></li>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- 头部nav -->
+<div class="bs-docs-header" id="content" tabindex="-1">
+      <div class="container">
+        <h1>接单须知</h1>
+        <p>接单须知，接单必须知道的事情</p>
+      </div>
+    </div>  
+<div id="content">  
+<div id="ny-main">
+  <div class="row-search">
+    
+    <div id="ny-left-nr" style="padding:0px 10%;">
+      <div class="about-xueda" style="border: 0px; margin: 0px; padding: 0px; color: rgb(102, 102, 102); font-family: 宋体, Arial, Helvetica, sans-serif; line-height: 20px;">
+	<p style="border: none; margin: 0px; padding: 0px 20px 0px 0px; list-style-image: none; list-style-type: none; font-size: 14px; text-indent: 2em; line-height: 28px;">
+		<br />
+		<span style="color:#ff0000;"><strong>【教员接单流程】</strong></span><br />
+		<strong><span style="color:#008000;">注册<span style="text-indent: 2em;">&rarr;查看接单须知</span><span style="text-indent: 2em;">&rarr;联系客服预约&rarr;缴纳信息费&rarr;获取学员信息&rarr;联系家长、反馈&rarr;试讲、反馈&rarr;成功</span></span></strong><br />
+		<span style="text-indent: 2em;">1、在网站上注册，填写个人简历，提交认证资料，注册后留意网站或者QQ群里信息的更新。如果有强烈的家教的意愿请向客服提交自已的家教需求，有合适的信息，优先推送</span><br />
+		<span style="text-indent: 2em;">2、有合适的信息，请把个人信息（学校+专业+年级+姓名+信息编号+个人简介）发给客服，例如：北大+大二+英语+张三+8888+有辅导经验，为更高效地接信息，个人简介请尽量详细</span><br />
+		<span style="text-indent: 2em;">3、客服根据家长的要求审核、筛选老师，通过后及时支付信息费，付款后把截图发给客服，客服收到截图后会立即给教员学员信息</span><br />
+		<span style="text-indent: 2em;">4、获得学员联系方式后请立即联系家长，介绍自己的情况，与家长商定试讲时间、地点、内容；并在网站上提交反馈</span><br />
+		<span style="text-indent: 2em;">5、按约定试讲，试讲后在网站提交反馈。若失败在网站上申请退款并反馈给客服</span></p>
+	<p style="border: none; margin: 0px; padding: 0px 20px 0px 0px; list-style-image: none; list-style-type: none; font-size: 14px; text-indent: 2em; line-height: 28px;">
+		<br />
+		<span style="color:#ff0000;"><strong>【使用协议】</strong></span><br />
+		1、试讲前收取信息费，每条信息的信息费会在信息里标明，请留意群里或者网站的更新；<br />
+		2、教员需保证所提供个人信息及接单后的反馈信息准确无误，若提交虚假信息，因此导致的一切结果教员自行承担；<br />
+		3、教员需保证所提供个人信息及接单后的反馈信息准确无误，若提交虚假信息，因此导致的一切结果教员自行承担；<br />
+		4、教员应最迟在接单后3小时在网站注册、提交认证信息，并在网站上提交接单反馈，在试讲时间后8小时内提交试讲反馈；<br />
+		5、教员首次上门授课应携个人学生证(教师证)、身份证等相关证件原件，并主动提供学生证（教师证）、身份证复印件各一份；<br />
+		6、为人师表，教员在与家长沟通、辅导过程中应礼貌、大方，举止得当，按时到达；<br />
+		7、教员应认真备课，为学员拟定配套的教学计划，并充分利用教学时间，教员不得在授课期间玩手机或者做其它与教学无关的事；&nbsp;<br />
+		8、College家教仅负责提供家教信息，不承担家教信息以外的其它任何责任。<br />
+		<br />
+		<span style="color:#ff0000;"><strong>【退款说明】</strong></span><br />
+		1、若是因信息错误导致接单失败，可全额退款，教员无需承担任何责任；<br />
+		2、若教员联系家长时家长已经找到老师或不再需要家教老师，可全额退款，教员无需承担任何责任；<br />
+		3、教员接单后48小时内未联系上家长或者接单后2周内未开始上课，而教员不愿再等待，可全额退款，教员无需承担任何责任；<br />
+		4、如果已经获得课酬，退款=信息费-已得课酬*50%，若所得课时费用高于2倍信息费，无论任何原因，不能退款；<br />
+		5、若因试教失败导致接单失败，退款需扣20元接单手续费，教员试讲前务必认真准备，但若信息为机构信息试讲失败不扣款；<br />
+		6、若辅导过程中学员私自降低课时费，若教员不接受按第一条处理退款，若教员接受按以下标准收取信息费，退回多交信息费：一周一次，收1次课时费；一周二次，收1.5次课时费；一周3次，收2次课时费；一周4次收2.5次课时费；一周5次及以上收3次课时费。短期家教、包月收取总课时的15%或者单月15%；<br />
+		7、时间、地点、价格家教中心已与家长协商好，若辅导过程中教员私自调整，因此失败不能退款；<br />
+		8、教员接信息后主动放弃家教，不能退款。只可转让信息（即让其它老师代替），因不抗因素转让信息退款扣除20接单手续费，主观放弃退款扣除50%接单手续费，未成功转让不能退款；<br />
+		9、教员若有以下行为则不能退款：教员接单后未按要求及时向家教中心反馈情况；教员试讲前未准备、因迟到导致信息失效、与家长产生矛盾或其它情况被家长投诉；教员未真实提交个人信息、接单后未如实反馈或者做出其它严重有损本家教中心权益的行为；<br />
+		10、对于退款，college家教保留最终解释权。<br />
+		&nbsp;<br />
+		&nbsp;<br />
+		&nbsp;<br />
+		&nbsp;<br />
+		&nbsp;</p>
+</div>
+<br />
+<embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0"></embed><embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0"></embed><embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0"></embed><embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0"></embed><embed height="0" id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" width="0"></embed>
+    </div>
+    
+    <div class="clear"></div>
+  </div>
+
+</div>  
+</div>
+<footer class="footer ">
+      <div class="container">
+        <div class="row footer-top">
+          <div class="col-sm-6 col-lg-6">
+            <h4>
+              College大学生家教网
+            </h4>
+            <p>College大学生家教网，最专业的大学生家教网</p>
+          </div>
+          <div class="col-sm-6  col-lg-5 col-lg-offset-1">
+            <div class="row about">
+              <div class="col-xs-3">
+                <h4>关于</h4>
+                <ul class="list-unstyled">
+                  <li><a href="">关于我们</a></li>
+                  <li><a href="">合作建议</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-3">
+                <h4>联系方式</h4>
+                <ul class="list-unstyled">
+                  <li><a href="" target="_blank">联系我们</a></li>
+                </ul>
+              </div>
+              <div class="col-xs-3">
+                <h4>招贤纳士</h4>
+                <ul class="list-unstyled">
+                  <li><a href="" target="_blank">招贤纳士</a></li>
+                 
+                </ul>
+              </div>
+              <div class="col-xs-3">
+                <h4>帮助中心</h4>
+                <ul class="list-unstyled">
+                  <li><a href="" target="_blank">帮助中心</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+        <hr>
+        <div class="row footer-bottom">
+          <ul class="list-inline text-center">
+            <li><a href="" target="_blank">闽ICP备11008151号</a></li><li>闽公网安备11010802014853</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
