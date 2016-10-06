@@ -64,6 +64,8 @@ if($step == 1)
         $nianji =trim($nianji);
         $qq = trim($qq);
 		$city = trim($city);
+		//自我介绍
+		$introduction = trim($introduction);
         if(empty($school)){
         	ShowMsg('学校不能为空', '-1');
         	exit();
@@ -84,7 +86,10 @@ if($step == 1)
         	ShowMsg('所在城市不能为空', '-1');
         	exit();
         }
-        
+        if(empty($introduction)){
+        	ShowMsg('自我介绍不能为空', '-1');
+        	exit();
+        }
         if($rs != 'ok')
         {
             ShowMsg($rs, '-1');
@@ -230,9 +235,9 @@ if($step == 1)
 		$spaceSta = 0;
         
         $inQuery = "INSERT INTO `#@__member` (`mtype` ,`userid` ,`pwd` ,`uname` ,`sex` ,`rank` ,`money` ,`email` ,`scores` ,
-        `matt`, `spacesta` ,`face`,`safequestion`,`safeanswer` ,`jointime` ,`joinip` ,`logintime` ,`loginip`,`mobile`, `school`,`zhuanye`,`nianji`,`qq`, `city` )
+        `matt`, `spacesta` ,`face`,`safequestion`,`safeanswer` ,`jointime` ,`joinip` ,`logintime` ,`loginip`,`mobile`, `school`,`zhuanye`,`nianji`,`qq`, `city`, `introduction` )
        VALUES ('$mtype','$userid','$pwd','$uname','$sex','10','$dfmoney','$email','$dfscores',
-       '0','$spaceSta','','$safequestion','$safeanswer','$jointime','$joinip','$logintime','$loginip','$mob','$school','$zhuanye','$nianji','$qq','$city'); ";
+       '0','$spaceSta','','$safequestion','$safeanswer','$jointime','$joinip','$logintime','$loginip','$mob','$school','$zhuanye','$nianji','$qq','$city','$introduction'); ";
 
         if($dsql->ExecuteNoneQuery($inQuery))
         {
