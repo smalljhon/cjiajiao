@@ -87,7 +87,7 @@
           <ul>
             <li class="name"><?php echo $cfg_ml->M_LoginID; ?><span><?php echo $cfg_ml->M_MbType; ?>用户</span></li>
            
-           
+           <li class="name">会员编号：<?php echo $cfg_ml->M_ID; ?></li>
           </ul>
           <div class="msg">
           
@@ -98,7 +98,7 @@
           <?php 
           
            $zt=$cfg_ml->fields['spacesta'];
-          
+
            if($zt==-10)
            {
            	 echo $cfg_ml->M_LoginID."您的基本资料正在审核中，请您稍后查看";
@@ -118,7 +118,7 @@
             
             $description=$row[title]; 
            
-            
+
             if($description==$uname)
             {
            	 ?>
@@ -149,9 +149,10 @@
 	<div class="col-lg-8 col-lg-offset-2">
 	<div class="alert alert-success" role="alert"> 
 	<?php 
-	$sql="Select * From `dede_sysconfig` where info='教员公告' "; 
+	$sql="Select city_fee_pic From `dede_city` as c,`dede_member` as m where c.city_name= m.city and m.mid={$cfg_ml->M_ID}"; 
+	//echo $sql;
     $row = $GLOBALS[dsql]->GetOne($sql); 
-	echo $row['value'];
+	echo empty($row['city_fee_pic'])?"暂无公告":$row['city_fee_pic'];
 	?>
 	</div>
 	</div>

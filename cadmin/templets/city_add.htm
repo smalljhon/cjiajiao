@@ -65,9 +65,16 @@ function checkSubmit()
           </tr>
   
           <tr> 
-            <td align="right" class='bline'>城市介绍图片：</td>
+            <td align="right" class='bline'>预约QQ，多个QQ用逗号隔开：</td>
             <td class='bline'  style="text-align:left;">
-            <input type="text" name="city_intro_pic" id="city_intro_pic" value="" placeholder="请输入首页城市介绍图片名称，以城市拼音命名"/>
+            <input type="text" name="city_intro_pic" id="city_intro_pic" value="" placeholder="预约QQ，多个QQ用逗号隔开"/>
+            </td>
+          </tr>
+           <tr> 
+            <td align="right" class='bline'>城市公告：</td>
+            <td class='bline'  style="text-align:left;">
+            <textarea type="text" name="city_fee_pic" id="city_fee_pic" rows=10 style="width:300px"><?php echo $row['city_fee_pic']?></textarea>
+            <input type="radio" name="noticeall" value="0" checked/>只应用于本城市<input type="radio" name="noticeall" value="1"/>应用于其他城市
             </td>
           </tr>
           <tr> 

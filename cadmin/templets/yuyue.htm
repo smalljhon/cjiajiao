@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
-<title>申请退款记录</title>
+<title>预约</title>
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script language="javascript" src="js/member.js"></script>
@@ -13,6 +13,43 @@
 </style>
 </head>
 <body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<!--条件筛选：处理结果；按照城市筛选-->
+<table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6" style="margin-bottom:6px">
+  <tr>
+    <td height="30" align="center" bgcolor="#F9FCEF"> 
+  <form action="yuyue.php" name="form1" method="get" id="condForm">
+	  <table border="0" cellspacing="0" cellpadding="3">
+      <tr>
+           <!-- 状态 -->
+           <td>
+		      <select name="deal_status" id="deal_status" style="width:150px" onchange="changeCond()">
+              <option value=''>--处理结果--</option>
+              <?php
+           		foreach($staArr as $k=>$v)
+           		{
+           			if($deal_status==$v) echo "<option value='$v' selected>$v</option>\r\n";
+           			else echo "<option value='$v'>$v</option>\r\n";
+           		}
+           	  ?>
+            </select></td>
+            <!-- 城市 -->
+             <td>
+		      <select name="city" id="city" style="width:150px" onchange="changeCond()">
+               <option value=''>--城市--</option>
+              <?php
+           		foreach($cityArr as $k=>$v)
+           		{
+           			if($city==$v) echo "<option value='$v' selected>$v</option>\r\n";
+           			else echo "<option value='$v'>$v</option>\r\n";
+           		}
+           	  ?>
+            </select></td>
+        </tr>
+      </table>
+	  </form>
+    </td>
+  </tr>
+</table>
 <!--筛选结果-->
 <form name="form2" action="fee_back.php" method="post">
 <table width="1200px" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#cfcfcf">
@@ -61,6 +98,9 @@
 </form>
 </body>
 <script type="text/javascript">
+function changeCond(){
+	document.getElementById("condForm").submit();
+}
 $(document).ready(function(){
 	$(".deal_status").change(function(){
 		var status = $(this).children('option:selected').val();

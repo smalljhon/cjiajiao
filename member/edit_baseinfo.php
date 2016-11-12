@@ -44,7 +44,46 @@ if($dopost=='save')
         $pwd2 = substr(md5($userpwd),5,20);
     }
     $addupquery = '';
-    
+    $school = trim($school);
+        $zhuanye = trim($zhuanye);
+        $nianji =trim($nianji);
+        $qq = trim($qq);
+		//$city = trim($city);
+		//自我介绍
+		$introduction = trim($introduction);
+		
+		//标签
+		$biaoqian = trim($biaoqian);
+        if(empty($school)){
+        	ShowMsg('学校不能为空', '-1');
+        	exit();
+        }
+        if(empty($zhuanye)){
+        	ShowMsg('专业不能为空', '-1');
+        	exit();
+        }
+        if(empty($nianji)){
+        	ShowMsg('年级不能为空', '-1');
+        	exit();
+        }
+        if(empty($qq)){
+        	ShowMsg('qq不能为空', '-1');
+        	exit();
+        }
+		// if(empty($city)){
+        //	ShowMsg('所在城市不能为空', '-1');
+        //	exit();
+        //}
+        if(empty($introduction)){
+        	ShowMsg('自我介绍不能为空', '-1');
+        	exit();
+        }
+        
+        if(empty($introduction)){
+        	ShowMsg('标签不能为空', '-1');
+        	exit();
+        }
+    $addupquery .= ",school='$school',zhuanye='$zhuanye',nianji='$nianji',qq='$qq',introduction='$introduction',biaoqian='$biaoqian'";
     #api{{
     if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
     {
@@ -54,13 +93,14 @@ if($dopost=='save')
     #/aip}}
     
     //修改安全问题或Email
-    if($email != $row['email'] || ($newsafequestion != 0 && $newsafeanswer != ''))
+    //if($email != $row['email'] || ($newsafequestion != 0 && $newsafeanswer != ''))
+    if($email != $row['email'])
     {
-        if($row['safequestion']!=0 && ($row['safequestion'] != $safequestion || $row['safeanswer'] != $safeanswer))
-        {
-            ShowMsg('你的旧安全问题及答案不正确，不能修改Email或安全问题！','-1');
-            exit();
-        }
+        //if($row['safequestion']!=0 && ($row['safequestion'] != $safequestion || $row['safeanswer'] != $safeanswer))
+        //{
+        //    ShowMsg('你的旧安全问题及答案不正确，不能修改Email或安全问题！','-1');
+        //    exit();
+        //}
 
         //修改Email
         if($email != $row['email'])
@@ -77,6 +117,7 @@ if($dopost=='save')
         }
 
         //修改安全问题
+        /*
         if($newsafequestion != 0 && $newsafeanswer != '')
         {
             if(strlen($newsafeanswer) > 30)
@@ -90,7 +131,7 @@ if($dopost=='save')
 			    $newsafeanswer = HtmlReplace($newsafeanswer,1);
                 $addupquery .= ",safequestion='$newsafequestion',safeanswer='$newsafeanswer'";
             }
-        }
+        }*/
     }
 
     //修改uname

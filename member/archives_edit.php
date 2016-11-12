@@ -28,6 +28,8 @@ if(empty($dopost))
     $arcQuery = "SELECT arc.*,ch.addtable,ch.fieldset,arc.mtype as mtypeid,ch.arcsta
        FROM `#@__archives` arc LEFT JOIN `#@__channeltype` ch ON ch.id=arc.channel
        WHERE arc.id='$aid' And arc.mid='".$cfg_ml->M_ID."'; ";
+       echo $arcQuery;
+      // exit;
     $row = $dsql->GetOne($arcQuery);
     if(!is_array($row))
     {

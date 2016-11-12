@@ -66,6 +66,8 @@ if($step == 1)
 		$city = trim($city);
 		//自我介绍
 		$introduction = trim($introduction);
+		//标签
+		$biaoqian = trim($biaoqian);
         if(empty($school)){
         	ShowMsg('学校不能为空', '-1');
         	exit();
@@ -88,6 +90,10 @@ if($step == 1)
         }
         if(empty($introduction)){
         	ShowMsg('自我介绍不能为空', '-1');
+        	exit();
+        }
+        if(empty($biaoqian)){
+        	ShowMsg('标签不能为空', '-1');
         	exit();
         }
         if($rs != 'ok')
@@ -235,9 +241,9 @@ if($step == 1)
 		$spaceSta = 0;
         
         $inQuery = "INSERT INTO `#@__member` (`mtype` ,`userid` ,`pwd` ,`uname` ,`sex` ,`rank` ,`money` ,`email` ,`scores` ,
-        `matt`, `spacesta` ,`face`,`safequestion`,`safeanswer` ,`jointime` ,`joinip` ,`logintime` ,`loginip`,`mobile`, `school`,`zhuanye`,`nianji`,`qq`, `city`, `introduction` )
+        `matt`, `spacesta` ,`face`,`safequestion`,`safeanswer` ,`jointime` ,`joinip` ,`logintime` ,`loginip`,`mobile`, `school`,`zhuanye`,`nianji`,`qq`, `city`, `introduction`,`biaoqian` )
        VALUES ('$mtype','$userid','$pwd','$uname','$sex','10','$dfmoney','$email','$dfscores',
-       '0','$spaceSta','','$safequestion','$safeanswer','$jointime','$joinip','$logintime','$loginip','$mob','$school','$zhuanye','$nianji','$qq','$city','$introduction'); ";
+       '0','$spaceSta','','$safequestion','$safeanswer','$jointime','$joinip','$logintime','$loginip','$mob','$school','$zhuanye','$nianji','$qq','$city','$introduction','$biaoqian'); ";
 
         if($dsql->ExecuteNoneQuery($inQuery))
         {

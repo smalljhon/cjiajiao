@@ -97,6 +97,37 @@
       			<span id="txtUsername"><?php echo $cfg_ml->M_LoginID; ?></span>
     		</div>
   		</div>
+  		<!-- 个人信息 -->
+  		 <div class="form-group">
+    		<label for="school" class="col-sm-3 control-label">学校</label>
+    		<div class="col-sm-6">
+      			<input name="school" type="text" id="school" class="intxt form-control"  value="<?php echo $row['school']; ?>"/> <span style="color:red;">*</span>
+    		</div>
+  		  </div>
+  		   <div class="form-group">
+    		<label for="nianji" class="col-sm-3 control-label">年级</label>
+    		<div class="col-sm-6">
+      			<input name="nianji" type="text" id="nianji" class="intxt form-control"  value="<?php echo $row['nianji']; ?>"/> <span style="color:red;">*</span>
+    		</div>
+  		  </div>
+  		   <div class="form-group">
+    		<label for="zhuanye" class="col-sm-3 control-label">专业</label>
+    		<div class="col-sm-6">
+      			<input name="zhuanye" type="text" id="zhuanye" class="intxt form-control"  value="<?php echo $row['zhuanye']; ?>"/> <span style="color:red;">*</span>
+    		</div>
+  		  </div>
+  		   <div class="form-group">
+    		<label for="mobile" class="col-sm-3 control-label">电话</label>
+    		<div class="col-sm-6">
+      			<input name="mobile" type="text" id="mobile" class="intxt form-control"  value="<?php echo $row['mobile']; ?>"/> <span style="color:red;">*</span>
+    		</div>
+  		  </div>
+  		   <div class="form-group">
+    		<label for="qq" class="col-sm-3 control-label">qq</label>
+    		<div class="col-sm-6">
+      			<input name="qq" type="text" id="qq" class="intxt form-control"  value="<?php echo $row['qq']; ?>"/> <span style="color:red;">*</span>
+    		</div>
+  		  </div>
   		<!-- 
           <p class="cellBg">
             <label>帐号类型：</label>
@@ -145,6 +176,7 @@
             <span id="_userpwdok2">(不修改密码请保留此项为空)</span> </span>
           </p>
            -->
+           <!--  
             <div class="form-group">
     			<label for="" class="col-sm-3 control-label">原安全问题</label>
     			<div class="col-sm-6">
@@ -175,7 +207,7 @@
     			<div class="col-sm-6">
       				<input name="newsafeanswer" type="text" id="newsafeanswer" class="intxt form-control"/>
     			</div>
-  		  	</div>
+  		  	</div>-->
   		  	<div class="form-group">
     			<label for="email" class="col-sm-3 control-label">电子邮箱</label>
     			<div class="col-sm-6">
@@ -199,6 +231,18 @@
     			<div class="col-sm-6">
       				<input name="vdcode" type="text" id="vdcode" style='width:100px;text-transform:uppercase;' class="intxt form-control" />
            			<img src="../include/vdimgck.php" align="absmiddle" alt="看不清？点击更换" style="cursor:pointer" onclick="this.src=this.src+'?'" />
+    			</div>
+  		  	</div>
+  		  	<div class="form-group">
+    			<label for="introduction" class="col-sm-3 control-label">自我介绍</label>
+    			<div class="col-sm-6">
+      				<textarea name="introduction" id="introduction" type="text" rows=5 style="width:100%"><?php echo $row['introduction'];?></textarea>
+    			</div>
+  		  	</div>
+  		  	<div class="form-group">
+    			<label for="biaoqian" class="col-sm-3 control-label">标签</label>
+    			<div class="col-sm-6">
+      				<textarea name="biaoqian" id="biaoqian" type="text" rows=5 style="width:100%"><?php echo $row['biaoqian'];?></textarea>
     			</div>
   		  	</div>
   		  	<div class="form-group">

@@ -111,7 +111,9 @@ box-shadow: 0px 0px 2px #000;
 <div class="container">
 	<div class="row" style="width=520px;margin:0px auto;height:120px;vertical-align:middle;line-height:120px">
 		<div class="" style="width:100%;">
+		<?php if($isMobile==0){?>
 		<img src="/templets/default/images/logo.jpg"  height="100px"/><span>College家教</span>
+		<?php }?>
 		<form action="home.php" method="post" id="cityForm" name="cityForm" style="display:inline-block;margin-left:30px">
 		当前城市：&nbsp;<span type="text" id="cityChoice" value=""><?php echo $city;?>&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down glyphicon-align-right" aria-hidden="true"></span></span>
 		<input type="hidden" id="province" name='province' value="">
@@ -141,17 +143,19 @@ box-shadow: 0px 0px 2px #000;
 			?>
 
 			</form>
+			<?php if($isMobile==0){ ?>
 			<div class="contact-info fr">
 				<div class="body cf">
 					<div style="background:url('/templets/default/images/logo-desc2.png')  no-repeat;height:60px;margin-top:15px;width:100%"></div>
 				</div>
 			</div>
+			<?php }?>
 			<div class="contact-info fr">
                     <div class="body cf">
                         <em></em>
                         <div>
                             <p>服务咨询热线</p>
-                            <p>400-882-1008</p>
+                            <p><a href="tel:400-882-1008">400-882-1008</a></p>
                         </div>
                     </div>
                 </div>
@@ -181,12 +185,14 @@ box-shadow: 0px 0px 2px #000;
 				<li class="page-scroll" style="margin-left:50px">
 					<a href="home.php">首页</a>
 				</li>
+				<?php if($isMobile==0){ ?>
 				<li class="page-scroll">
 					<a href="tuijian.php">明星教员</a>
 				</li>
 				<li class="page-scroll">
 					<a href="help.php?aid=19">帮助中心</a>
 				</li>
+				<?php } ?>
 				<li class="page-scroll">
 					<a href="info_index.php">教员登录</a>
 				</li>

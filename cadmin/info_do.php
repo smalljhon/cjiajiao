@@ -228,18 +228,23 @@ else if ($dopost=='addInfo')
 		$msg .= "城市不能为空\r\n";
 		$ok=false;
 	}
-	if(empty($bus_stop)){
-		$msg .= "车站不能为空\r\n";
+	/*if(empty($bus_stop)){
+		$msg .= "站点不能为空\r\n";
 		$ok=false;
-	}
+	}*/
+	/*
 	if(empty($requirement)){
 		$msg .= "需求信息不能为空";
 		$ok=false;
 	}
+	*/
+	/*
 	if(empty($info_fee)){
 		$msg .= "信息费不能为空";
 		$ok=false;
 	}
+	*/
+	/*
 	if(empty($contact_name1)){
 		$msg .= "联系人1不能为空\r\n";
 		$ok=false;
@@ -248,12 +253,13 @@ else if ($dopost=='addInfo')
 		$msg .= "联系方式1不能为空\r\n";
 		$ok=false;
 	}
-	
+	*/
+	/*
 	if(empty($from_source)){
 		$msg .= "来源不能为空\r\n";
 		$ok=false;
 	}
-
+*/
 	if(!ok){
 		ShowMsg($msg, 'info_add.php?id='.$id);
 		exit();

@@ -18,10 +18,11 @@ if(!$cfg_ml->IsLogin())
 	$minfo = $dsql->GetOne("SELECT city FROM `#@__member` WHERE mid='".$cfg_ml->M_ID."'; ");
 	//$code = $_GET['city_code'];
 	
-	$cityrow = $dsql->GetOne("SELECT city_code FROM `#@__city` WHERE city_name = '" . $minfo['city'] . "'");
+	$cityrow = $dsql->GetOne("SELECT city_code,city_intro_pic FROM `#@__city` WHERE city_name = '" . $minfo['city'] . "'");
 	if(!empty($cityrow)){
 		$code = $cityrow['city_code'];//默认为厦门
 	}
+	$qq = $cityrow['city_intro_pic'];
 }
 
 $cityrow = $dsql->GetOne("SELECT * FROM `#@__city` WHERE city_code = '" . $code . "'");
@@ -61,6 +62,7 @@ $sql  = "SELECT * FROM `#@__member_xueyuan` $whereSql ORDER BY createtime DESC "
 $dlist = new DataListCP();//分页用
 //echo $sql;
 $dlist->SetParameter('city',$city);
+$dlist->SetParameter('qq',$qq);
 $dlist->SetTemplet("./templets/default/info_index.htm");
 $dlist->SetSource($sql);
 $dlist->display();

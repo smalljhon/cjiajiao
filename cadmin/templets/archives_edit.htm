@@ -143,7 +143,7 @@ function checkSubmit()
           </tr>
         </table></td>
     </tr>
-    
+    <!--  
      <tr id="pictable" style='<?php if($cInfos['needpic']==0) echo 'display:none'; ?>'>
       <td height="24" class="bline">
       	<table width="770" border="0" cellspacing="0" cellpadding="0">
@@ -200,13 +200,14 @@ function checkSubmit()
           </tr>
         </table></td>
     </tr>
+    -->
 	<tr>
       <td height="24" class="bline">
       <table width="800" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td width="90">&nbsp;自我介绍：</td>
             <td>
-			<textarea name="description" id="description"><?php echo $arcRow['description'];?></textarea>
+			<textarea name="description" style="width:100%" rows=6 id="description"><?php echo $arcRow['description'];?></textarea>
            </td>
           </tr>
       </table>
@@ -218,7 +219,7 @@ function checkSubmit()
           <tr>
             <td width="90">&nbsp;获奖经历：</td>
             <td>
-			<textarea width="200px" name="prize_good" id="prize_good"><?php echo $arcRow['prize_good'];?></textarea>
+			<textarea width="200px" style="width:100%" rows=6 name="prize_good" id="prize_good"><?php echo $arcRow['prize_good'];?></textarea>
            </td>
           </tr>
       </table>
@@ -230,7 +231,7 @@ function checkSubmit()
           <tr>
             <td width="90">&nbsp;工作经验：</td>
             <td>
-			<textarea name="work_experience" id="work_experience"><?php echo $arcRow['work_experience'];?></textarea>
+			<textarea rows=6 style="width:100%" name="work_experience" id="work_experience"><?php echo $arcRow['work_experience'];?></textarea>
            </td>
           </tr>
       </table>

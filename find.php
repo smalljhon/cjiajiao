@@ -8,6 +8,7 @@
  */
 session_start();
 require_once (dirname(__FILE__) . "/include/common.inc.php");
+require_once (dirname(__FILE__) . "/include/checkMobile.php");
 //CheckPurview('info_List');
 require_once(DEDEINC."/datalistcp.class.php");
 
@@ -16,5 +17,12 @@ $dlist = new DataListCP();//分页用
 $city = isset($_SESSION['city'])?$_SESSION['city']:'厦门';
 
 $dlist->SetParameter("city", $city);
+
+//判断是否为手机浏览器
+$isMobile = isMobile()?1:0;
+
+$dlist->SetParameter("isMobile",$isMobile);
+
+
 $dlist->SetTemplet("./templets/home/find.htm");
 $dlist->display();

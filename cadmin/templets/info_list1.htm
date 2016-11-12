@@ -14,21 +14,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
 <title>学员信息管理</title>
+<link href="/cadmin/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/base.css" rel="stylesheet" type="text/css">
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script language="javascript" src="js/member.js"></script>
+<script src="/cadmin/js/bootstrap.min.js"></script>
 <style type="text/css">
 .rb{ border-right:1px solid #666666 }
 .tb{ border-top:1px solid #666666 }
 </style>
 </head>
 <body background='images/allbg.gif' leftmargin='8' topmargin='8'>
-操作列表：<br>
-<a href="info_list.php">信息列表</a><br/>
-<a href="info_add.php">信息增加</a><br/>
-<a href="fee_back.php">退款处理</a><br/>
-<a href="member_main.php">教员信息</a><br/>
-<a href="exit.php">退出登录</a>
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active"><a href="info_list.php">信息列表</a></li>
+  <li role="presentation"><a href="info_add.php">信息增加</a></li>
+  <li role="presentation"><a href="fee_back.php">退款处理</a></li>
+  <li role="presentation"><a href="member_main.php">教员信息</a></li>
+  <li role="presentation"><a href="exit.php">退出登录</a></li>
+</ul>
 <table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6" style="margin-bottom:6px">
   <tr>
     <td height="30" align="center" bgcolor="#F9FCEF"> 
@@ -105,7 +108,7 @@
   </tr>
 </table>
 <form name="form2">
-<table width="98%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#cfcfcf">
+<table class="table table-bordered" width="98%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#cfcfcf">
   <tr> 
   <td height="28" colspan="16" background="images/tbg.gif">
    <table width="99%" border="0" cellspacing="0" cellpadding="0">

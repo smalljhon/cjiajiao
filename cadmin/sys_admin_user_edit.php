@@ -122,6 +122,7 @@ while($nrow = $dsql->GetObject('op'))
     
     while($nrow = $dsql->GetObject('s'))
     {
+    	
         $typeOptions .= "<option value='{$nrow->id}' class='stype'".(in_array($nrow->id, $typeids) ? ' selected' : '').">！{$nrow->typename}</option>\r\n";
     }
 }
@@ -131,7 +132,10 @@ $dsql->SetQuery("Select mid,city_name From `#@__city` where mid>0");
 $dsql->Execute();
 while($crow = $dsql->GetObject())
 {
-	
-	$cityOptions .= "<option value='{$crow->city_name}' class='stype'>！{$crow->city_name}</option>\r\n";
+	$admin_city = split(",",$row['admin_city']);
+	if(in_array($crow->city_name,$admin_city))
+		$cityOptions .= "<option value='{$crow->city_name}' class='stype' selected>！{$crow->city_name}</option>\r\n";
+	else
+		$cityOptions .= "<option value='{$crow->city_name}' class='stype'>！{$crow->city_name}</option>\r\n";
 }
 include DedeInclude('templets/sys_admin_user_edit.htm');

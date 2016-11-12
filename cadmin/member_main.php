@@ -38,6 +38,7 @@ if(!isset($matt)) $matt = 10;
 if(!isset($city)) $city = '';//城市
 
 
+
 if(!isset($keyword)) $keyword = '';
 else $keyword = trim(FilterSearch($keyword));
 
@@ -118,6 +119,7 @@ if($matt != 10)
     $wheres[] = " matt= '$matt' ";
 }
 
+
 if($city != '')
 {
 	$wheres[] = " city LIKE '$city' ";
@@ -140,6 +142,7 @@ while($row = $dsql->GetArray())
     $MemberModels[] = $row;
 }
 $sql  = "SELECT m.*,a.id as aid FROM `#@__member` as m left join `#@__archives` as a on m.mid = a.mid $whereSql ORDER BY m.mid DESC ";
+
 $dlist = new DataListCP();//分页用
 $dlist->SetParameter('sex',$sex);
 $dlist->SetParameter('spacesta',$spacesta);

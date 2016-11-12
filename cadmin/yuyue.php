@@ -25,11 +25,36 @@ if($dopost == 'set_status'){
 	}
 		
 }
+if(!isset($deal_status)) $deal_status = '';//处理状态，空为所有信息
+if(!isset($city)) $city = '';//城市，空为所有城市
 
 
-$sql  = "SELECT * FROM `#@__requirements` where 1=1 order by mid desc";
+//处理状态
+$staArr = array(1=>'未处理', 2=>'已处理');
+$wheres[] = "1=1";
+if($deal_status   != '')
+{
+	$wheres[] = " deal_status LIKE '$deal_status' ";
+}
 
+if($city != '')
+{
+	$wheres[] = " city LIKE '$city' ";
+}
+
+$whereSql = join(' AND ',$wheres);
+
+$sql  = "SELECT * FROM `#@__requirements` where ". $whereSql ." order by mid desc";
+//echo $sql;
 $dlist = new DataListCP();//分页用
+
+//城市
+$dsql->SetQuery("Select mid,city_name From `#@__city` where mid>0");
+$dsql->Execute();
+while($row = $dsql->GetObject())
+{
+	$cityArr[$row->mid] = $row->city_name;
+}
 
 $dlist->SetTemplet(DEDEADMIN."/templets/yuyue.htm");
 $dlist->SetSource($sql);

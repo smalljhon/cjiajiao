@@ -63,6 +63,8 @@ $adminMenu2 = "<m:top item='7_' name='模板管理' display='none' rank='temp_One,te
   <m:item name='SQL命令行工具' link='sys_sql_query.php' rank='sys_Data' target='main' />
   <m:item name='城市列表' link='city_list.php' rank='c_List' target='main' />
   <m:item name='新增城市' link='city_add.php' rank='c_List' target='main' />
+  <m:item name='学员备份' link='/beifen/exportxueyuan.php' rank='c_List' target='main' />
+  <m:item name='教员备份' link='/beifen/exportjiaoyuan.php' rank='c_List' target='main' />		
 </m:top>
 
 

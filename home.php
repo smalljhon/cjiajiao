@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once (dirname(__FILE__) . "/include/common.inc.php");
+require_once (dirname(__FILE__) . "/include/checkMobile.php");
 //CheckPurview('info_List');
 require_once(DEDEINC."/datalistcp.class.php");
 setcookie("ENV_GOBACK_URL",$dedeNowurl,time()+3600,"/");
@@ -19,9 +20,14 @@ if(!isset($dopost)){
 
 $dlist = new DataListCP();//分页用
 $dlist->SetParameter('city',$city);
+//判断是否为手机浏览器
+$isMobile = isMobile()?1:0;
 
+$dlist->SetParameter('isMobile',$isMobile);
 //$dlist->SetParameter('city_pic',$city_pic['city_intro_pic']);
 
 $dlist->SetTemplet("./templets/home/index.html");
 $dlist->SetSource($sql);
 $dlist->display();
+
+

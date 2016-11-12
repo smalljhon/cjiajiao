@@ -184,8 +184,9 @@ else if ($dopost=='addInfo')
 	$city_name = trim($city_name);
 	$city_code = trim($city_code);
 	$city_pre = trim($city_pre);
-
-
+	$city_intro_pic = trim($city_intro_pic);
+	$city_fee_pic = trim($city_fee_pic);
+	
 	if(empty($city_name)){
 		$msg .= "城市名称不能为空\r\n";
 		$ok=false;
@@ -204,12 +205,19 @@ else if ($dopost=='addInfo')
 		exit();
 	}
 	 
-
-	$query = "INSERT INTO `#@__city`(`type`,`parent_id`,`city_code`,`city_name`,`city_pre`,`city_intro_pic`) VALUES(2,0,'$city_code','$city_name',".
-	"'$city_pre','$city_intro_pic')";
+	
+	$query = "INSERT INTO `#@__city`(`type`,`parent_id`,`city_code`,`city_name`,`city_pre`,`city_intro_pic`,`city_fee_pic`) VALUES(2,0,'$city_code','$city_name',".
+	"'$city_pre','$city_intro_pic','$city_fee_pic')";
 	
 	$rs = $dsql->ExecuteNoneQuery2($query);
 	//echo $rs."rs";
+	 //公告应用于所有城市
+    if($noticeall){
+    	$query = "UPDATE `#@__city` SET          
+			city_fee_pic = '$city_fee_pic'
+             WHERE mid>0";
+    	$rs = $dsql->ExecuteNoneQuery2($query);
+    }
 	if($rs==1){
 		ShowMsg('成功新增城市信息', "city_list.php?act=addDone&city=".$city,0,1000);
 		exit();
@@ -233,7 +241,9 @@ else if ($dopost=='editInfo')
 	$city_name = trim($city_name);
 	$city_code = trim($city_code);
 	$city_pre = trim($city_pre);
-	
+	$city_intro_pic = trim($city_intro_pic);
+	$city_fee_pic = trim($city_fee_pic);
+	$noticeall = trim($noticeall);
 
 	if(empty($city_name)){
 		$msg .= "城市名称不能为空\r\n";
@@ -257,9 +267,18 @@ else if ($dopost=='editInfo')
             city_code = '$city_code',
             city_pre = '$city_pre',
             city_name = '$city_name',
-			city_intro_pic = '$city_intro_pic'
+			city_intro_pic = '$city_intro_pic', 
+			city_fee_pic = '$city_fee_pic'
              WHERE mid=$id";
     $rs = $dsql->ExecuteNoneQuery2($query);
+    //公告应用于所有城市
+    if($noticeall){
+    	$query2 = "UPDATE `#@__city` SET          
+			city_fee_pic = '$city_fee_pic'
+             WHERE mid>0";
+    	$rs2 = $dsql->ExecuteNoneQuery($query2);
+    }
+
     //echo $query;
     if($rs==1){
     	ShowMsg('成功更改会员资料！', 'city_list.php',0,1000);
