@@ -43,7 +43,7 @@ if(!isset($info_sta)) $info_sta = '';//处理状态，空为所有信息
 if(!isset($city)) $city = '';//城市，空为所有城市
 
 //信息状态
-$staArr = array(0=>'未处理', 1=>'已退款', 2=>'不退款');
+$staArr = array(0=>'未处理', 1=>'已退款', 2=>'不退款',3=>'已确认');
 //管理员管理的城市
 $cityArr = array();
 $user_id = $GLOBALS['cuserLogin']->getUserID();
@@ -71,8 +71,8 @@ if($city != '')
 	$cities = array();
 	foreach($cityArr as $ocity)
 		$cities[] = ("'" . $ocity . "'");
-	$wheres[] =  "city in (" . implode(",",$cities) . ")";
-	$wheres[] = " and br.info_id = mx.mid ";
+	$wheres[] =  " mx.city in (" . implode(",",$cities) . ")";
+	$wheres[] = " br.info_id = mx.mid ";
 }
 
 $whereSql = join(' AND ',$wheres);
@@ -88,7 +88,7 @@ $dlist->display();
 function Status($status)
 {
 	//退款状态
-	$dealSta = array(1=>'已退款', 2=>'不退款', 3=>'未处理');
+	$dealSta = array(1=>'已退款', 2=>'不退款', 3=>'未处理',4 =>'已确认');
 	$html = "<select class='deal_status' name='deal_status' style='width:80px'>";
            
     foreach($dealSta as $k=>$v)

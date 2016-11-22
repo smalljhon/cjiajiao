@@ -111,6 +111,15 @@ else if($dopost=='save')
 
     //处理图片文档的自定义属性
     if($litpic!='') $flag = 'p';
+    else{
+    	$row = $dsql->GetOne("SELECT * FROM `#@__member` where mid = " . $mid);
+    	if(!empty($row)){
+    		if($row['sex'] == '男')
+    			$litpic = '/uploads/male.png';
+    		else if($row['sex'] == '女')
+    			$litpic = '/uploads/female.png';
+    	}
+    }
 
     //生成文档ID
     $arcID = GetIndexKey($arcrank,$typeid,$sortrank,$channelid,$senddate,$mid);

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once (dirname(__FILE__) . "/include/common.inc.php");
+require_once (dirname(__FILE__) . "/include/checkMobile.php");
 //CheckPurview('info_List');
 require_once(DEDEINC."/datalistcp.class.php");
 setcookie("ENV_GOBACK_URL",$dedeNowurl,time()+3600,"/");
@@ -17,7 +18,10 @@ $dlist = new DataListCP();//分页用
 $dlist->SetParameter('city',$city);
 $dsql->SetQuery($sql);
 $dsql->Execute();
+//判断是否为手机浏览器
+$isMobile = isMobile()?1:0;
 
+$dlist->SetParameter('isMobile',$isMobile);
 $dlist->SetTemplet("./templets/home/recommend.html");
 $dlist->SetSource($sql);
 $dlist->display();
@@ -27,11 +31,13 @@ function emptyConvert($value){
 function getFirst($name){
 	return mb_substr($name,0,1,'utf-8');
 }
-function userPic($pic){
-	if(empty($pic))
-		$img = "<img src='/uploads/male.png' style='width:100%'/>";
+function userPic($pic,$sex){
+	if(empty($pic)&&$sex=='男')
+		$img = "<img src='/uploads/male.png' style='width:100%;margin-top: -30px;'/>";
+	else if(empty($pic)&&$sex=='女')
+		$img = "<img src='/uploads/female.png' style='width:100%;margin-top: -30px;'/>";
 	else
-		$img = "<img src= '".$pic."'/ style='width:100%'>";
+		$img = "<img src= '".$pic."'/ style='width:100%;margin-top: -30px;'>";
 	return $img;
 }
 function rankSta($spacesta){
@@ -45,7 +51,9 @@ function biaoqian($biaoqian){
 		//删除多余空格
 		$biaoqians = array_filter($biaoqians);
 		foreach($biaoqians as $one)
-			$tags.=("<span class='label label-default'>".$one."</span>&nbsp;&nbsp;");
+			$tags.=("<li style='float:left;margin-bottom:9px;'><span class='label label-default'>".$one."</span>&nbsp;&nbsp;</li>");
+			//$tags.=("<span class='label label-default'>".$one."</span>&nbsp;&nbsp;");
+			//$tags.=("<button type='button' class='btn btn-default'>".$one."</button>&nbsp;&nbsp;");
 	}
 	if(empty($tags))
 		$tags = "暂无标签";

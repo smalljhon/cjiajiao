@@ -96,8 +96,8 @@ else
 {
     $sortform = "<option value='logintime'>µÇÂ¼Ê±¼ä</option>\r\n";
 }
-
-$wheres[] = " (userid LIKE '%$keyword%' OR uname LIKE '%$keyword%' OR email LIKE '%$keyword%') ";
+if($keyword!='')
+	$wheres[] = " (userid LIKE '%$keyword%' OR uname LIKE '%$keyword%' OR email LIKE '%$keyword%' OR qq LIKE '%$keyword%' OR mobile LIKE '%$keyword%' OR m.mid=$keyword) ";
 
 if($sex   != '')
 {

@@ -67,16 +67,16 @@ if($dopost=='add')
     $user_id = $cfg_ml->M_ID;
     
     //查看是否已经提交过反馈
-    $bac_record = $dsql->GetOne("SELECT * FROM `#@__back_fee_record` WHERE info_bianhao= '" . $info_bianhao . "' AND user_id = " . $user_id);
-    if(empty($bac_record))
+    //$bac_record = $dsql->GetOne("SELECT * FROM `#@__back_fee_record` WHERE info_bianhao= '" . $info_bianhao . "' AND user_id = " . $user_id);
+    //if(empty($bac_record))
     	//添加到数据库
     	 $query = "INSERT INTO `#@__back_fee_record`(`user_id`,`user_name`,`tel`,`info_id`,`info_bianhao`,`back_fee`,`alipay_num`,`weixin`,`reason`,`apply_time`)".
     			" VALUES('$cfg_ml->M_ID','$user_name','$tel','$info_id','$info_bianhao','$back_fee','$alipay_num','$weixin','$reason','$apply_time')";
-    else
-    	$query = "UPDATE `#@__back_fee_record` SET user_id = '" . $cfg_ml->M_ID . "', user_name = '" . $user_name .
-    	 "', tel = '" . $tel . "', info_id = '" . $info_id . "', info_bianhao = '" . $info_bianhao ."', back_fee = '" . $back_fee .
-    	 "', alipay_num = '" . $alipay_num . "', weixin = '" . $weixin . "', reason = '" . $reason ."', apply_time = '" . $apply_time .
-    "', deal_result='' WHERE info_bianhao= '" . $info_bianhao . "' AND user_id = " . $user_id;
+   // else
+   // 	$query = "UPDATE `#@__back_fee_record` SET user_id = '" . $cfg_ml->M_ID . "', user_name = '" . $user_name .
+   // 	 "', tel = '" . $tel . "', info_id = '" . $info_id . "', info_bianhao = '" . $info_bianhao ."', back_fee = '" . $back_fee .
+   // 	 "', alipay_num = '" . $alipay_num . "', weixin = '" . $weixin . "', reason = '" . $reason ."', apply_time = '" . $apply_time .
+   // "', deal_result='' WHERE info_bianhao= '" . $info_bianhao . "' AND user_id = " . $user_id;
     
  
     
